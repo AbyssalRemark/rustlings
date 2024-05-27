@@ -1,6 +1,7 @@
 {
   description = "Small exercises to get you used to reading and writing Rust code";
 
+  # Nix uses a set of input and outputs to define everything. 
   inputs = {
     flake-compat = {
       url = "github:edolstra/flake-compat";
