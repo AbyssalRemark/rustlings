@@ -2,12 +2,17 @@
 //
 // No hints this time! ;)
 
-// I AM NOT DONE
+// I AM DONE
 
 #[derive(Debug)]
 enum Message {
-    // TODO: define a few types of messages as used below
+    Quit,// "why",
+    Echo,//: "do",
+    Move,//: "I",
+    ChangeColor,//: "try",
 }
+//easier then I was expecting. Its weird we can print that. means theres meta
+//data that knows that. 
 
 fn main() {
     println!("{:?}", Message::Quit);
