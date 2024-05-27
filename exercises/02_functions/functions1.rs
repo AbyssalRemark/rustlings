@@ -3,8 +3,14 @@
 // Execute `rustlings hint functions1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
-fn main() {
+fn call_me()
+{
+    print!("Curly braces are hell.");
+}
+
+fn main() 
+{
     call_me();
 }
