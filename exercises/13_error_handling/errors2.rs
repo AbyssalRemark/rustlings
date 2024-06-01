@@ -19,14 +19,19 @@
 // Execute `rustlings hint errors2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 use std::num::ParseIntError;
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
-    let qty = item_quantity.parse::<i32>();
+    let qty = item_quantity.parse::<i32>()?;
+    //added a ? to the above l ine. its saying if this errors, return that error.
+    //Which is neat...
+    //Though I dissagree with it. A single character shouldnt have that much power. 
+    //Maybe I can highlight it something special in my text editor to make it 
+    //really obvious. 
 
     Ok(qty * cost_per_item + processing_fee)
 }
