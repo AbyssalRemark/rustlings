@@ -12,9 +12,10 @@
 //
 // Execute `rustlings hint cow1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 use std::borrow::Cow;
+//create on write?
 
 fn abs_all<'a, 'b>(input: &'a mut Cow<'b, [i32]>) -> &'a mut Cow<'b, [i32]> {
     for i in 0..input.len() {
@@ -48,7 +49,9 @@ mod tests {
         let slice = [0, 1, 2];
         let mut input = Cow::from(&slice[..]);
         match abs_all(&mut input) {
-            // TODO
+            Cow::Borrowed(_) => Ok(()),
+            _ => Err("Expected borrowed value"),
+            //basically just needed to check.. dont feel like I know Cow any better.
         }
     }
 
@@ -60,7 +63,10 @@ mod tests {
         let slice = vec![0, 1, 2];
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
-            // TODO
+            // Owned because not a refference. 
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected owned value"),
+            //added
         }
     }
 
@@ -72,7 +78,9 @@ mod tests {
         let slice = vec![-1, 0, 1];
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
-            // TODO
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected owned value"), 
+            //added
         }
     }
 }

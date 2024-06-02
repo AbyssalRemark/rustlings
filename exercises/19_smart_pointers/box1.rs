@@ -18,11 +18,11 @@
 //
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 #[derive(PartialEq, Debug)]
 pub enum List {
-    Cons(i32, List),
+    Cons(i32, Box<List>), //added box here.
     Nil,
 }
 
@@ -35,11 +35,18 @@ fn main() {
 }
 
 pub fn create_empty_list() -> List {
-    todo!()
+    //right so, enums hold data,
+    //so we just need to fill it. 
+    //in this case with nothing. 
+    //Sense Nil has no type. it takes up no memory.
+    List::Nil
 }
 
 pub fn create_non_empty_list() -> List {
-    todo!()
+    List::Cons(3, Box::new(List::Nil))
+    //we neet to call new On Box because thats our pointer to memory
+    //Its basically like, a fixed size allocation with someone else managing 
+    //the memory. Which. does make this a very, very simple linked list. 
 }
 
 #[cfg(test)]

@@ -3,7 +3,7 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
@@ -15,6 +15,18 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    
+    // Without loops? 
+    if num == 0 
+    {
+        return 1;
+    }
+
+    return (1..=num).reduce(|res, i| res * i).unwrap();
+    // Thats nutty... 
+    // so reduce... collapses numbers, with a behavior?
+    // So.. thats our "not a loop"
+
 }
 
 #[cfg(test)]

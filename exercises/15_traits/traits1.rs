@@ -7,7 +7,7 @@
 // Execute `rustlings hint traits1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 trait AppendBar {
     fn append_bar(self) -> Self;
@@ -15,6 +15,15 @@ trait AppendBar {
 
 impl AppendBar for String {
     // TODO: Implement `AppendBar` for type `String`.
+    fn append_bar(mut self) -> Self
+    {
+        //had to add mut to the deffinition which kinda doesnt feel right sense
+        //its apart of type identity. This now could just be totally different 
+        //from the append behavior as stated above sense it has a different type
+        //which rust doesnt do... I guess this is why
+        self.push_str("Bar");
+        self
+    }
 }
 
 fn main() {

@@ -6,12 +6,15 @@
 // Execute `rustlings hint tests2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// I AM DONE
 
 #[cfg(test)]
 mod tests {
     #[test]
     fn you_can_assert_eq() {
-        assert_eq!();
+        assert_eq!("a", "a");
+        //same as before, just does the equal internally for.. I assume.. 
+        //complex types. But thats speculation. Something that doesnt have a 
+        // == operator. 
     }
 }
